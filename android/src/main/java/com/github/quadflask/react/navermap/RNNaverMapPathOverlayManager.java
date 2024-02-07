@@ -61,11 +61,6 @@ public class RNNaverMapPathOverlayManager extends EventEmittableViewGroupManager
         view.setWidth(widthInScreenPx);
     }
 
-    @ReactProp(name = "zIndex", defaultInt = 0)
-    public void setProgress(RNNaverMapPathOverlay view, int zIndex) {
-        view.setZIndex(zIndex);
-    }
-
     @ReactProp(name = "color", defaultInt = Color.RED, customType = "Color")
     public void setColor(RNNaverMapPathOverlay view, int color) {
         view.setColor(color);
@@ -106,5 +101,15 @@ public class RNNaverMapPathOverlayManager extends EventEmittableViewGroupManager
     @ReactProp(name = "progress", defaultFloat = 0f)
     public void setProgress(RNNaverMapPathOverlay view, float progress) {
         view.setProgress(progress);
+    }
+
+    @ReactProp(name = "zIndex", defaultInt = 0)
+    public void setProgress(RNNaverMapPathOverlay view, int zIndex) {
+        view.setZIndex(zIndex);
+    }
+
+    @ReactProp(name = "zIndexGlobal", defaultInt = 0)
+    public void setProgress(RNNaverMapPathOverlay view, int zIndex) {
+        view.setGlobalZIndex(zIndex);
     }
 }

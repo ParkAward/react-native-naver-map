@@ -81,4 +81,18 @@ public class RNNaverMapPolylineOverlayManager extends EventEmittableViewGroupMan
             patternArray[i] = pattern.getInt(i);
         view.setPattern(patternArray);
     }
+
+    @ReactProp(name = "zIndex", defaultInt = 0)
+    public void setProgress(RNNaverMapPolylineOverlay view, int zIndex) {
+        view.setZIndex(zIndex);
+    }
+
+    @ReactProp(name = "zIndexGlobal", defaultInt = 0)
+    public void setProgress(RNNaverMapPolylineOverlay view, int zIndex) {
+        view.setGlobalZIndex(zIndex);
+    }
+
+
+
+
 }

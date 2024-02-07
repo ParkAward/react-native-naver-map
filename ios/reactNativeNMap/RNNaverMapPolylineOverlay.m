@@ -46,4 +46,12 @@
   _realOverlay.color = strokeColor;
 }
 
+- (void)setZIndex:(CGFloat) zIndex {
+  _realOverlay.zIndex = zIndex;
+}
+
+- (void)setGlobalZIndex:(CGFloat) globalZIndex{
+  _realOverlay.globalZIndex = globalZIndex;
+}
+
 @end

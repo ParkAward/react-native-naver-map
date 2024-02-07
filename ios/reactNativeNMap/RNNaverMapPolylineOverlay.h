@@ -15,10 +15,14 @@
 
 @property (nonatomic, weak) RCTBridge *bridge;
 @property (nonatomic, strong) NMFPolylineOverlay *realOverlay;
+@property (nonatomic) NMFOverlayLineCap capType;
 
 @property (nonatomic, assign) NSArray<NMGLatLng *> *coordinates;
 @property (nonatomic, assign) CGFloat strokeWidth;
 @property (nonatomic, strong) UIColor *strokeColor;
 @property (nonatomic, copy) RCTDirectEventBlock onClick;
+
+@property (nonatomic, assign) CGFloat zIndex;
+@property (nonatomic, assign) CGFloat globalZIndex;
 
 @end

@@ -33,6 +33,7 @@ public class RNNaverMapPathOverlay extends ClickableRNNaverMapFeature<PathOverla
     public RNNaverMapPathOverlay(EventEmittable emitter, Context context) {
         super(emitter, context);
         feature = new PathOverlay();
+        feature.setGlobalZIndex(-999999);
         imageHolder = DraweeHolder.create(createDraweeHierarchy(), context);
         imageHolder.onAttach();
     }
@@ -54,6 +55,10 @@ public class RNNaverMapPathOverlay extends ClickableRNNaverMapFeature<PathOverla
 
     public void setZIndex(int zIndex) {
         feature.setZIndex(zIndex);
+    }
+
+    public void setGlobalZIndex(int zIndex) {
+        feature.setGlobalZIndex(zIndex);
     }
 
     public void setProgress(float progress) {

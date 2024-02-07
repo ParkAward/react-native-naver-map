@@ -13,6 +13,8 @@ public class RNNaverMapPolylineOverlay extends ClickableRNNaverMapFeature<Polyli
         feature = new PolylineOverlay();
     }
 
+
+
     public void setCoords(List<LatLng> coords) {
         feature.setCoords(coords);
     }
@@ -35,5 +37,13 @@ public class RNNaverMapPolylineOverlay extends ClickableRNNaverMapFeature<Polyli
 
     public void setPattern(int[] pattern) {
         feature.setPattern(pattern);
+    }
+
+    public void setZIndex(int zIndex){
+        feature.setZIndex(zIndex);
+    }
+
+    public void setGlobalZIndex(int zIndex){
+        feature.setGlobalZIndex(zIndex);
     }
 }
