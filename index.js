@@ -25,14 +25,14 @@ const RNNaverMapPolygonOverlay = requireNativeComponent(
   "RNNaverMapPolygonOverlay"
 );
 export var TrackingMode;
-(function(TrackingMode) {
+(function (TrackingMode) {
   TrackingMode[(TrackingMode["None"] = 0)] = "None";
   TrackingMode[(TrackingMode["NoFollow"] = 1)] = "NoFollow";
   TrackingMode[(TrackingMode["Follow"] = 2)] = "Follow";
   TrackingMode[(TrackingMode["Face"] = 3)] = "Face";
 })(TrackingMode || (TrackingMode = {}));
 export var MapType;
-(function(MapType) {
+(function (MapType) {
   MapType[(MapType["Basic"] = 0)] = "Basic";
   MapType[(MapType["Navi"] = 1)] = "Navi";
   MapType[(MapType["Satellite"] = 2)] = "Satellite";
@@ -40,7 +40,7 @@ export var MapType;
   MapType[(MapType["Terrain"] = 4)] = "Terrain";
 })(MapType || (MapType = {}));
 export var LayerGroup;
-(function(LayerGroup) {
+(function (LayerGroup) {
   LayerGroup["LAYER_GROUP_BUILDING"] = "building";
   LayerGroup["LAYER_GROUP_TRANSIT"] = "transit";
   LayerGroup["LAYER_GROUP_BICYCLE"] = "bike";
@@ -49,7 +49,7 @@ export var LayerGroup;
   LayerGroup["LAYER_GROUP_MOUNTAIN"] = "mountain";
 })(LayerGroup || (LayerGroup = {}));
 export var Gravity;
-(function(Gravity) {
+(function (Gravity) {
   Gravity[(Gravity["NO_GRAVITY"] = 0)] = "NO_GRAVITY";
   Gravity[(Gravity["AXIS_SPECIFIED"] = 1)] = "AXIS_SPECIFIED";
   Gravity[(Gravity["AXIS_PULL_BEFORE"] = 2)] = "AXIS_PULL_BEFORE";
@@ -64,7 +64,7 @@ export var Gravity;
   Gravity[(Gravity["CENTER_HORIZONTAL"] = 1)] = "CENTER_HORIZONTAL";
 })(Gravity || (Gravity = {}));
 export var Align;
-(function(Align) {
+(function (Align) {
   Align[(Align["Center"] = 0)] = "Center";
   Align[(Align["Left"] = 1)] = "Left";
   Align[(Align["Right"] = 2)] = "Right";
@@ -191,7 +191,6 @@ export class Circle extends Component {
 }
 export class Polyline extends Component {
   render() {
-    console.log(RNNaverMapPolylineOverlay);
     return React.createElement(
       RNNaverMapPolylineOverlay,
       Object.assign({}, this.props)

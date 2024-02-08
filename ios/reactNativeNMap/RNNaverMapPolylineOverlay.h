@@ -15,7 +15,7 @@
 
 @property (nonatomic, weak) RCTBridge *bridge;
 @property (nonatomic, strong) NMFPolylineOverlay *realOverlay;
-@property (nonatomic) NMFOverlayLineCap capType;
+@property (nonatomic) CGFloat capType;
 
 @property (nonatomic, assign) NSArray<NMGLatLng *> *coordinates;
 @property (nonatomic, assign) CGFloat strokeWidth;

@@ -74,20 +74,20 @@ const MapViewScreen = ({navigation}) => {
         onCameraChange={e => console.warn('onCameraChange', JSON.stringify(e))}
         onMapClick={e => console.warn('onMapClick', JSON.stringify(e))}
         useTextureView>
+        <Polyline
+          coordinates={[P0, P2]}
+          onClick={() => console.warn('onClick! path')}
+          strokeWidth={50}
+          capType={2}
+          strokeColor="rgba(255,0,0,0.5)"
+          zIndexGlobal={123123123}
+        />
         <Path
           coordinates={[P0, P2]}
           onClick={() => console.warn('onClick! path')}
           width={10}
           zIndex={123123123210}
-          zIndexGlobal={-99999999999}
-        />
-        <Polyline
-          coordinates={[P0, P2]}
-          onClick={() => console.warn('onClick! path')}
-          strokeWidth={50}
-          strokeColor="rgba(255,0,0,0.5)"
-          zIndex={123123123}
-          zIndexGlobal={98999999}
+          zIndexGlobal={1010}
         />
         {/* <Marker
           coordinate={P0}

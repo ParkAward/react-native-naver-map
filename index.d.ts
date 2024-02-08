@@ -225,6 +225,7 @@ interface PolylineProps extends Omit<MapOverlay, "coordinate"> {
   coordinates: Coord[];
   strokeWidth?: number;
   strokeColor?: string;
+  setCapType?: 0 | 1 | 2;
   zIndex?: number;
   zIndexGlobal?: number;
 }

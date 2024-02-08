@@ -21,7 +21,6 @@
 {
   if ((self = [super init])) {
     _realOverlay = [NMFPolylineOverlay new];
-
     __block RNNaverMapPolylineOverlay *this = self;
     _realOverlay.touchHandler = ^BOOL(NMFOverlay *overlay) {
       if (this.onClick != nil) {
@@ -50,8 +49,21 @@
   _realOverlay.zIndex = zIndex;
 }
 
-- (void)setGlobalZIndex:(CGFloat) globalZIndex{
+- (void)setGlobalZIndex:(CGFloat) globalZIndex {
   _realOverlay.globalZIndex = globalZIndex;
+}
+
+- (void)setCapType:(CGFloat) capType{
+  if(capType == 1){
+    _realOverlay.capType = NMFOverlayLineCapRound;
+  }
+  else if(capType == 2){
+    _realOverlay.capType = NMFOverlayLineCapSquare;
+  }
+  else{
+    _realOverlay.capType = NMFOverlayLineCapButt;
+  }
+    
 }
 
 @end
