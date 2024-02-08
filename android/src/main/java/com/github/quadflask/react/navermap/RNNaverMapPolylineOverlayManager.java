@@ -83,12 +83,12 @@ public class RNNaverMapPolylineOverlayManager extends EventEmittableViewGroupMan
     }
 
     @ReactProp(name = "zIndex", defaultInt = 0)
-    public void setProgress(RNNaverMapPolylineOverlay view, int zIndex) {
+    public void setZIndex(RNNaverMapPolylineOverlay view, int zIndex) {
         view.setZIndex(zIndex);
     }
 
-    @ReactProp(name = "zIndexGlobal", defaultInt = 0)
-    public void setProgress(RNNaverMapPolylineOverlay view, int zIndex) {
+    @ReactProp(name = "globalZIndex", defaultInt = 0)
+    public void setGlobalZIndex(RNNaverMapPolylineOverlay view, int zIndex) {
         view.setGlobalZIndex(zIndex);
     }
 
