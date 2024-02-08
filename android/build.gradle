@@ -6,25 +6,25 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath("com.android.tools.build:gradle:4.2.2")
     }
 }
 
 android {
-    compileSdkVersion rootProject.ext.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 33
+    compileSdkVersion rootProject.ext.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 31
     buildToolsVersion rootProject.ext.hasProperty('buildToolsVersion') ? rootProject.ext.buildToolsVersion : "33.0.0"
 
     defaultConfig {
         minSdkVersion rootProject.ext.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 21
-        targetSdkVersion rootProject.ext.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 33
+        targetSdkVersion rootProject.ext.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 31
 
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_9
-        targetCompatibility JavaVersion.VERSION_1_9
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     buildTypes {
         release {
@@ -54,6 +54,6 @@ repositories {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    implementation "com.naver.maps:map-sdk:${rootProject.ext.hasProperty('mapSdkVersion') ? rootProject.ext.mapSdkVersion : '3.12.0'}"
-    implementation "com.google.android.gms:play-services-location:16.0.0"
+    implementation "com.naver.maps:map-sdk:${rootProject.ext.hasProperty('mapSdkVersion') ? rootProject.ext.mapSdkVersion : '3.16.0'}"
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
 }
