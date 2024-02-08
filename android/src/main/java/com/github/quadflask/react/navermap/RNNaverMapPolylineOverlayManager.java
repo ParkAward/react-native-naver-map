@@ -66,7 +66,7 @@ public class RNNaverMapPolylineOverlayManager extends EventEmittableViewGroupMan
 
     @ReactProp(name = "capType", defaultInt = 0)
     public void setCapType(RNNaverMapPolylineOverlay view, int capType) {
-        view.setCapType(PolylineOverlay.LineCap.values()[capType]);
+        view.setCapType(capType);
     }
 
     @ReactProp(name = "joinType", defaultInt = 0)

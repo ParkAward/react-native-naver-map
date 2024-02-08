@@ -223,9 +223,9 @@ export declare class Circle extends Component<CircleProps> {
 }
 interface PolylineProps extends Omit<MapOverlay, "coordinate"> {
   coordinates: Coord[];
+  capType?: 0 | 1 | 2;
   strokeWidth?: number;
   strokeColor?: string;
-  setCapType?: 0 | 1 | 2;
   zIndex?: number;
   zIndexGlobal?: number;
 }

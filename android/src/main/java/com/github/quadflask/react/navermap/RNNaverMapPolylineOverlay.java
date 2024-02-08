@@ -27,8 +27,14 @@ public class RNNaverMapPolylineOverlay extends ClickableRNNaverMapFeature<Polyli
         feature.setColor(color);
     }
 
-    public void setCapType(PolylineOverlay.LineCap value) {
-        feature.setCapType(value);
+    public void setCapType(int value) {
+        if(value == 1){
+            feature.setCapType(PolylineOverlay.LineCap.Round);
+        } else if (value == 2) {
+            feature.setCapType(PolylineOverlay.LineCap.Butt);
+        }else {
+            feature.setCapType(PolylineOverlay.LineCap.Square);
+        }
     }
 
     public void setJoinType(PolylineOverlay.LineJoin value) {
