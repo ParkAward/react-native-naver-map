@@ -10,7 +10,7 @@ export interface Region extends Coord {
   longitudeDelta: number;
 }
 
-export declare enum GlobalZIndex {
+export declare enum EntityZLevel {
   InfoWindow = 400000,
   LocationOverlay = 300000,
   Marker = 200000,
@@ -181,6 +181,7 @@ export interface MarkerProps extends MapOverlay {
   angle?: number;
   hidden?: boolean;
   zIndex?: number;
+  globalZIndex?: number;
   iconPerspectiveEnabled?: boolean;
   isHideCollidedSymbols?: boolean;
   isHideCollidedMarkers?: boolean;
@@ -227,7 +228,7 @@ interface PolylineProps extends Omit<MapOverlay, 'coordinate'> {
   strokeWidth?: number;
   strokeColor?: string;
   zIndex?: number;
-  zIndexGlobal?: number;
+  globalZIndex?: number;
 }
 export declare class Polyline extends Component<PolylineProps> {
   render(): JSX.Element;
@@ -238,6 +239,8 @@ interface PolygonProps extends Omit<MapOverlay, 'coordinate'> {
   outlineColor?: string;
   color?: string;
   holes?: Coord[][];
+  zIndex?: number;
+  globalZIndex?: number;
 }
 export declare class Polygon extends Component<PolygonProps> {
   render(): JSX.Element;
