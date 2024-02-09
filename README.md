@@ -1,24 +1,20 @@
-# 왜! 아무도 업데이트 해주지 않는가...
+추가 패치
 
-그럼 내가 해야지뭐 .. 전.. 이런거 하기 하기 싫습니다..
-
-추가된 패치
+---
 
 ```
-Path
-globalZIndex 추가됨
+OverlayZLevel Enum Obejct 추가됨
 
-PolyLine 
-capetype 추가됨
-globalZIndex 추가됨
+전체 Overlay 에 추가됨
+- globalZIndex: 맵의 z축
+- zIndex: 같은 Overlay의 z축
 
+Polyline
+- capType 추가됨
+- joinType 추가됨
 ```
 
-----
 
-**globalZIndex: 맵에서의 z축
-
-**zIndex: 동일 객체에서 z축
 
 
 
@@ -299,6 +295,7 @@ interface PolylineProps {
     coordinates: Coord[]
     strokeWidth?: number
   	capType?: "butt" | "round" | "square";
+  	joinType?: 'meter' | 'round' | 'bevel'
     strokeColor?: string
     globalZIndex?: number
     onClick?: () => void
@@ -358,6 +355,22 @@ export declare enum LayerGroup {
     LAYER_GROUP_MOUNTAIN = "mountain"
 }
 ```
+
+### `EntityZLevel`
+
+```ts
+export declare enum LayerGroup {
+		InfoWindow = 400000,
+  	LocationOverlay = 300000,
+  	Marker = 200000,
+  	ArrowRouteOverlay = 100000,
+  	RouteLine = -100000,
+  	Shape = -300000,
+  	Background = -400000,
+}
+```
+
+## 
 
 ## 참고
 
