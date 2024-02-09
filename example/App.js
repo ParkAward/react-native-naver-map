@@ -78,16 +78,14 @@ const MapViewScreen = ({navigation}) => {
           coordinates={[P0, P2]}
           onClick={() => console.warn('onClick! path')}
           strokeWidth={50}
-          capType={2}
+          capType={'square'}
           strokeColor="rgba(255,0,0,0.5)"
-          zIndexGlobal={123123123}
         />
         <Path
           coordinates={[P0, P2]}
           onClick={() => console.warn('onClick! path')}
           width={10}
           zIndex={123123123210}
-          zIndexGlobal={1010}
         />
         {/* <Marker
           coordinate={P0}

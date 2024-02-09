@@ -193,7 +193,14 @@ export class Polyline extends Component {
   render() {
     return React.createElement(
       RNNaverMapPolylineOverlay,
-      Object.assign({}, this.props)
+      Object.assign({}, this.props, {
+        capType:
+          this.props.capType === "round"
+            ? 1
+            : this.props.capType === "square"
+            ? 2
+            : 0,
+      })
     );
   }
 }
