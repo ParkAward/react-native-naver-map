@@ -24,6 +24,17 @@ const RNNaverMapCircleOverlay = requireNativeComponent(
 const RNNaverMapPolygonOverlay = requireNativeComponent(
   'RNNaverMapPolygonOverlay',
 );
+export var EntityZLevel;
+(function(EntityZLevel) {
+  EntityZLevel[(EntityZLevel['InfoWindow'] = 400000)] = 'BaInfoWindowsic';
+  EntityZLevel[(EntityZLevel['LocationOverlay'] = 300000)] = 'LocationOverlay';
+  EntityZLevel[(EntityZLevel['Marker'] = 200000)] = 'Marker';
+  EntityZLevel[(EntityZLevel['ArrowRouteOverlay'] = 100000)] =
+    'ArrowRouteOverlay';
+  EntityZLevel[(EntityZLevel['RouteLine'] = -100000)] = 'RouteLine';
+  EntityZLevel[(EntityZLevel['Shape'] = -300000)] = 'Shape';
+  EntityZLevel[(EntityZLevel['Background'] = -400000)] = 'Background';
+})(EntityZLevel || (EntityZLevel = {}));
 export var TrackingMode;
 (function(TrackingMode) {
   TrackingMode[(TrackingMode['None'] = 0)] = 'None';
@@ -189,17 +200,23 @@ export class Circle extends Component {
     );
   }
 }
+const capType = {
+  butt: 0,
+  round: 1,
+  square: 2,
+};
+const joinType = {
+  miter: 0,
+  round: 1,
+  bevel: 2,
+};
 export class Polyline extends Component {
   render() {
     return React.createElement(
       RNNaverMapPolylineOverlay,
       Object.assign({}, this.props, {
-        capType:
-          this.props.capType === 'round'
-            ? 1
-            : this.props.capType === 'square'
-            ? 2
-            : 0,
+        capType: capType[this.props.capType],
+        joinType: joinType[this.props.joinType],
       }),
     );
   }

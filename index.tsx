@@ -55,6 +55,16 @@ export enum MapType {
   Terrain = 4,
 }
 
+export enum EntityZLevel {
+  InfoWindow = 400000,
+  LocationOverlay = 300000,
+  Marker = 200000,
+  ArrowRouteOverlay = 100000,
+  RouteLine = -100000,
+  Shape = -300000,
+  Background = -400000,
+}
+
 export enum LayerGroup {
   LAYER_GROUP_BUILDING = "building",
   LAYER_GROUP_TRANSIT = "transit",
@@ -353,6 +363,7 @@ interface PolylineProps extends Omit<MapOverlay, "coordinate"> {
   strokeWidth?: number;
   strokeColor?: string;
   capType?: "butt" | "round" | "square";
+  joinType?: "bevel" | "miter" | "round";
   zIndex?: number;
   glboalZIndex?: number;
 }

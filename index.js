@@ -200,17 +200,23 @@ export class Circle extends Component {
     );
   }
 }
+const capType = {
+  butt: 0,
+  round: 1,
+  square: 2,
+};
+const joinType = {
+  miter: 0,
+  round: 1,
+  bevel: 2,
+};
 export class Polyline extends Component {
   render() {
     return React.createElement(
       RNNaverMapPolylineOverlay,
       Object.assign({}, this.props, {
-        capType:
-          this.props.capType === "round"
-            ? 1
-            : this.props.capType === "square"
-            ? 2
-            : 0,
+        capType: capType[this.props.capType],
+        joinType: joinType[this.props.joinType],
       })
     );
   }
