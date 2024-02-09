@@ -24,6 +24,17 @@ const RNNaverMapCircleOverlay = requireNativeComponent(
 const RNNaverMapPolygonOverlay = requireNativeComponent(
   "RNNaverMapPolygonOverlay"
 );
+export var EntityZLevel;
+(function (EntityZLevel) {
+  EntityZLevel[(EntityZLevel["InfoWindow"] = 400000)] = "BaInfoWindowsic";
+  EntityZLevel[(EntityZLevel["LocationOverlay"] = 300000)] = "LocationOverlay";
+  EntityZLevel[(EntityZLevel["Marker"] = 200000)] = "Marker";
+  EntityZLevel[(EntityZLevel["ArrowRouteOverlay"] = 100000)] =
+    "ArrowRouteOverlay";
+  EntityZLevel[(EntityZLevel["RouteLine"] = -100000)] = "RouteLine";
+  EntityZLevel[(EntityZLevel["Shape"] = -300000)] = "Shape";
+  EntityZLevel[(EntityZLevel["Background"] = -400000)] = "Background";
+})(EntityZLevel || (EntityZLevel = {}));
 export var TrackingMode;
 (function (TrackingMode) {
   TrackingMode[(TrackingMode["None"] = 0)] = "None";

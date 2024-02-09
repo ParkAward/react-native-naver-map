@@ -37,8 +37,14 @@ public class RNNaverMapPolylineOverlay extends ClickableRNNaverMapFeature<Polyli
         }
     }
 
-    public void setJoinType(PolylineOverlay.LineJoin value) {
-        feature.setJoinType(value);
+    public void setJoinType(int value) {
+        if(value == 1){
+            feature.setJoinType(PolylineOverlay.LineJoin.Round);
+        }else if(value == 2){
+            feature.setJoinType(PolylineOverlay.LineJoin.Bevel);
+        }else{
+            feature.setJoinType(PolylineOverlay.LineJoin.Miter);
+        }
     }
 
     public void setPattern(int[] pattern) {

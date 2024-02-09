@@ -52,4 +52,13 @@
   _realOverlay.fillColor = color;
 }
 
+- (void)setZIndex:(NSInteger) zIndex {
+  _realOverlay.zIndex = zIndex;
+}
+
+- (void)setGlobalZIndex:(NSInteger) globalZIndex {
+  _realOverlay.globalZIndex = globalZIndex;
+}
+
+
 @end

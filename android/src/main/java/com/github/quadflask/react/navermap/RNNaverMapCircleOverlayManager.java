@@ -79,4 +79,9 @@ public class RNNaverMapCircleOverlayManager extends EventEmittableViewGroupManag
         view.setZIndex(zIndex);
     }
 
+    @ReactProp(name = "globalZIndex", defaultInt = 0)
+    public void setGlobalZIndex(RNNaverMapCircleOverlay view, int globalZIndex) {
+        view.setZIndex(globalZIndex);
+    }
+
 }

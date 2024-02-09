@@ -127,6 +127,11 @@ public class RNNaverMapMarkerManager extends EventEmittableViewGroupManager<RNNa
         view.setZIndex(zIndex);
     }
 
+    @ReactProp(name = "globalZIndex" , defaultInt = 0)
+    public void setGlobalZIndex(RNNaverMapMarker view, int globalZIndex) {
+        view.setGlobalZIndex(globalZIndex);
+    }
+
     @ReactProp(name = "caption")
     public void setCaption(RNNaverMapMarker view, ReadableMap map) {
         if (map == null || !map.hasKey("text")) {

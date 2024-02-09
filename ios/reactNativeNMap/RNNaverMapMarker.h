@@ -19,6 +19,7 @@
 @property (nonatomic, assign) CGFloat width;
 @property (nonatomic, assign) CGFloat height;
 @property (nonatomic, assign) NSInteger zIndex;
+@property (nonatomic, assign) NSInteger globalZIndex;
 @property (nonatomic, assign) BOOL hidden;
 @property (nonatomic, assign) CGFloat angle;
 @property (nonatomic, assign) BOOL flatEnabled;

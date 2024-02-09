@@ -49,6 +49,10 @@
     _realMarker.zIndex = zIndex;
 }
 
+- (void)setGlobalZIndex:(NSInteger) globalZIndex {
+    _realMarker.globalZIndex = globalZIndex;
+}
+
 - (void)setHidden:(BOOL) hidden {
     _realMarker.hidden = hidden;
 }

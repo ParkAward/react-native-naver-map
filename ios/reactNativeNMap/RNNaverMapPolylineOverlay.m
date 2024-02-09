@@ -45,15 +45,15 @@
   _realOverlay.color = strokeColor;
 }
 
-- (void)setZIndex:(CGFloat) zIndex {
+- (void)setZIndex:(NSInteger) zIndex {
   _realOverlay.zIndex = zIndex;
 }
 
-- (void)setGlobalZIndex:(CGFloat) globalZIndex {
+- (void)setGlobalZIndex:(NSInteger) globalZIndex {
   _realOverlay.globalZIndex = globalZIndex;
 }
 
-- (void)setCapType:(CGFloat) capType{
+- (void)setCapType:(NSInteger) capType{
   if(capType == 1){
     _realOverlay.capType = NMFOverlayLineCapRound;
   }
@@ -63,7 +63,18 @@
   else{
     _realOverlay.capType = NMFOverlayLineCapButt;
   }
-    
+}
+
+- (void)setJoinType:(NSInteger) joinType{
+  if(joinType == 1){
+    _realOverlay.joinType = NMFOverlayLineJoinRound;
+  }
+  else if(joinType == 2){
+    _realOverlay.joinType = NMFOverlayLineJoinBevel;
+  }
+  else{
+    _realOverlay.joinType = NMFOverlayLineJoinMiter;
+  }
 }
 
 @end

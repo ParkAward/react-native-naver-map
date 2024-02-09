@@ -23,7 +23,6 @@
 {
   if ((self = [super init])) {
     _realOverlay = [NMFPath new];
-    _realOverlay.globalZIndex = -999999;
     __block RNNaverMapPathOverlay *this = self;
     _realOverlay.touchHandler = ^BOOL(NMFOverlay *overlay) {
       if (this.onClick != nil) {
@@ -91,12 +90,12 @@
   _realOverlay.patternInterval = patternInterval;
 }
 
-- (void) setZindex: (CGFloat) zIndex {
+- (void) setZindex: (NSInteger) zIndex {
   _realOverlay.zIndex = zIndex;
 
 }
 
-- (void) setGlobalZIndex: (CGFloat) globalZIndex {
+- (void) setGlobalZIndex: (NSInteger) globalZIndex {
   _realOverlay.globalZIndex = globalZIndex;
 }
 

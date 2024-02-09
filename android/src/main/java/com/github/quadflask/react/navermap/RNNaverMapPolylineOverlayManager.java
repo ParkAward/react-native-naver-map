@@ -71,7 +71,7 @@ public class RNNaverMapPolylineOverlayManager extends EventEmittableViewGroupMan
 
     @ReactProp(name = "joinType", defaultInt = 0)
     public void setJoinType(RNNaverMapPolylineOverlay view, int joinType) {
-        view.setJoinType(PolylineOverlay.LineJoin.values()[joinType]);
+        view.setJoinType(joinType);
     }
 
     @ReactProp(name = "pattern")

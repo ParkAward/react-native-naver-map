@@ -273,6 +273,7 @@ export interface MarkerProps extends MapOverlay {
   angle?: number;
   hidden?: boolean;
   zIndex?: number;
+  globalZIndex?: number;
   iconPerspectiveEnabled?: boolean;
   isHideCollidedSymbols?: boolean;
   isHideCollidedMarkers?: boolean;
@@ -336,6 +337,7 @@ export interface CircleProps extends MapOverlay {
   outlineWidth?: number;
   outlineColor?: string;
   zIndex?: number;
+  globalZIndex?: number;
 }
 
 export class Circle extends Component<CircleProps> {
@@ -351,6 +353,7 @@ interface PolylineProps extends Omit<MapOverlay, "coordinate"> {
   strokeWidth?: number;
   strokeColor?: string;
   capType?: "butt" | "round" | "square";
+  zIndex?: number;
   glboalZIndex?: number;
 }
 
@@ -368,6 +371,8 @@ interface PolygonProps extends Omit<MapOverlay, "coordinate"> {
   outlineColor?: string;
   color?: string;
   holes?: Coord[][];
+  zIndex?: number;
+  globalZIndex?: number;
 }
 
 export class Polygon extends Component<PolygonProps> {

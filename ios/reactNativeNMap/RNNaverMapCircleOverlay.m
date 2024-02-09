@@ -66,4 +66,8 @@
   _realOverlay.zIndex = zIndex;
 }
 
+- (void)setGlobalZIndex:(NSInteger) globalZIndex {
+  _realOverlay.globalZIndex = globalZIndex;
+}
+
 @end

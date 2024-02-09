@@ -34,4 +34,6 @@ public class RNNaverMapCircleOverlay extends ClickableRNNaverMapFeature<CircleOv
     public void setZIndex(int zIndex) {
         feature.setZIndex(zIndex);
     }
+
+    public void setGlobalZIndex(int globalZIndex) {feature.setGlobalZIndex(globalZIndex);}
 }

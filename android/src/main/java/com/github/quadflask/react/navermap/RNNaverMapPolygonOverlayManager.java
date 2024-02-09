@@ -82,4 +82,14 @@ public class RNNaverMapPolygonOverlayManager extends EventEmittableViewGroupMana
         }
         view.setHoles(holesArray);
     }
+
+    @ReactProp(name = "zIndex", defaultInt = 0)
+    public void setZIndex(RNNaverMapPolygonOverlay view, int zIndex) {
+        view.setZIndex(zIndex);
+    }
+
+    @ReactProp(name = "globalZIndex", defaultInt = 0)
+    public void setGlobalZIndex(RNNaverMapPolygonOverlay view, int globalZIndex) {
+        view.setZIndex(globalZIndex);
+    }
 }
