@@ -1,3 +1,31 @@
+# 왜! 아무도 업데이트 해주지 않는가...
+
+그럼 내가 해야지뭐 .. 전.. 이런거 하기 하기 싫습니다..
+
+추가된 패치
+
+```
+Path
+globalZIndex 추가됨
+
+PolyLine 
+capetype 추가됨
+globalZIndex 추가됨
+
+```
+
+----
+
+**globalZIndex: 맵에서의 z축
+
+**zIndex: 동일 객체에서 z축
+
+
+
+-----
+
+
+
 react-native-naver-map [![npm version](https://badge.fury.io/js/react-native-nmap.svg)](https://badge.fury.io/js/react-native-nmap)
 -----
 
@@ -270,7 +298,9 @@ interface MarkerProps {
 interface PolylineProps {
     coordinates: Coord[]
     strokeWidth?: number
+  	capType?: "butt" | "round" | "square";
     strokeColor?: string
+    globalZIndex?: number
     onClick?: () => void
 }
 ```
@@ -287,6 +317,7 @@ interface PathProps {
     passedOutlineColor?: string
     pattern?: ImageSourcePropType
     patternInterval?: number
+  	globalZIndex?: number
     onClick?: () => void
 }
 ```

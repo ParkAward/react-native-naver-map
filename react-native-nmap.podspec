@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.version      = package['version']
   s.summary      = "React Native Naver Mapview component for iOS + Android"
 
-  s.authors      = { "author" => "zerohch0@gmail.com" }
+  s.authors      = { "author" => "parksangjun1363@gmail.com" }
   s.homepage     = "https://github.com/ParkAward/react-native-naver-map"
   s.license      = package['license']
   s.platform     = :ios, "9.0"
