@@ -149,6 +149,10 @@ public class RNNaverMapMarker extends ClickableRNNaverMapFeature<Marker> impleme
         feature.setHeight(height);
     }
 
+    public void setHideCollidedMarkers(boolean isHidden) {
+        feature.setHideCollidedMarkers(isHidden);
+    }
+
     public void setCaption(String text, int textSize, int color, int haloColor, int offset, Align... aligns) {
         feature.setCaptionText(text);
         feature.setCaptionTextSize(textSize);
@@ -157,9 +161,19 @@ public class RNNaverMapMarker extends ClickableRNNaverMapFeature<Marker> impleme
         feature.setCaptionOffset(offset);
         feature.setCaptionAligns(aligns);
     }
+    public void setSubCaption(String text, int textSize, int color, int haloColor) {
+        feature.setSubCaptionText(text);
+        feature.setSubCaptionTextSize(textSize);
+        feature.setSubCaptionColor(color);
+        feature.setSubCaptionHaloColor(haloColor);
+    }
 
     public void removeCaption() {
         feature.setCaptionText("");
+    }
+
+    public void removeSubCaption() {
+        feature.setSubCaptionText("");
     }
 
     public void setImage(String uri) {
@@ -272,6 +286,15 @@ public class RNNaverMapMarker extends ClickableRNNaverMapFeature<Marker> impleme
 
     private void updateCustomView() {
         Log.d("MapMarker", "updateCustomView");
+        if(customView == null){
+            return;
+        }
+        if(customView.getWidth() == 0 || customView.getHeight() == 0){
+            Canvas canvas = new Canvas();
+
+            this.draw(canvas);
+            setOverlayImage(OverlayImage.fromBitmap((customViewBitmap)));
+        }
         if (customViewBitmap == null
                 || customViewBitmap.isRecycled()
                 || customViewBitmap.getWidth() != feature.getWidth()
@@ -284,15 +307,6 @@ public class RNNaverMapMarker extends ClickableRNNaverMapFeature<Marker> impleme
             Canvas canvas = new Canvas(customViewBitmap);
             this.draw(canvas);
             setOverlayImage(OverlayImage.fromBitmap(customViewBitmap));
-        }
-    }
-
-    @Override
-    public void requestLayout() {
-        super.requestLayout();
-        if (getChildCount() == 0 && customView != null) {
-            customView = null;
-            updateCustomView();
         }
     }
 }

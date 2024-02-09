@@ -12,7 +12,9 @@ import {
   UIManager,
   ViewStyle,
 } from "react-native";
+import { GpsUtils } from "./gpsUtilsInterface";
 
+export { GpsUtils };
 const RNNaverMapView = requireNativeComponent("RNNaverMapView");
 const RNNaverMapViewTexture = Platform.select({
   android: () => requireNativeComponent("RNNaverMapViewTexture"),

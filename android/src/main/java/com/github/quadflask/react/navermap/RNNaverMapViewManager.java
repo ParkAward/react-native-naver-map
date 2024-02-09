@@ -31,7 +31,7 @@ import static com.github.quadflask.react.navermap.ReactUtil.toNaverLatLng;
 
 public class RNNaverMapViewManager extends ViewGroupManager<RNNaverMapViewContainer> {
     private final ReactApplicationContext appContext;
-    private final FusedLocationSource locationSource;
+    private FusedLocationSource locationSource;
 
     private static final int ANIMATE_TO_REGION = 1;
     private static final int ANIMATE_TO_COORDINATE = 2;
@@ -51,7 +51,6 @@ public class RNNaverMapViewManager extends ViewGroupManager<RNNaverMapViewContai
     public RNNaverMapViewManager(ReactApplicationContext context) {
         super();
         this.appContext = context;
-        locationSource = new FusedLocationSource(context.getCurrentActivity(), 0x1000);
     }
 
     @NonNull
@@ -63,6 +62,9 @@ public class RNNaverMapViewManager extends ViewGroupManager<RNNaverMapViewContai
     @NonNull
     @Override
     protected RNNaverMapViewContainer createViewInstance(@NonNull ThemedReactContext reactContext) {
+        if(locationSource == null){
+            locationSource = new FusedLocationSource(reactContext.getCurrentActivity(), 0x1000);
+        }
         return new RNNaverMapViewContainer(reactContext, appContext, locationSource, getNaverMapViewOptions());
     }
 
