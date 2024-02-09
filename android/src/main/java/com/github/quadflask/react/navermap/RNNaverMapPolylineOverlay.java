@@ -31,9 +31,9 @@ public class RNNaverMapPolylineOverlay extends ClickableRNNaverMapFeature<Polyli
         if(value == 1){
             feature.setCapType(PolylineOverlay.LineCap.Round);
         } else if (value == 2) {
-            feature.setCapType(PolylineOverlay.LineCap.Butt);
-        }else {
             feature.setCapType(PolylineOverlay.LineCap.Square);
+        }else {
+            feature.setCapType(PolylineOverlay.LineCap.Butt);
         }
     }
 
@@ -49,7 +49,7 @@ public class RNNaverMapPolylineOverlay extends ClickableRNNaverMapFeature<Polyli
         feature.setZIndex(zIndex);
     }
 
-    public void setGlobalZIndex(int zIndex){
-        feature.setGlobalZIndex(zIndex);
+    public void setGlobalZIndex(int globalZIndex){
+        feature.setGlobalZIndex(globalZIndex);
     }
 }

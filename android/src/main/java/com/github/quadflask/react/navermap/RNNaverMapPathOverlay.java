@@ -57,8 +57,8 @@ public class RNNaverMapPathOverlay extends ClickableRNNaverMapFeature<PathOverla
         feature.setZIndex(zIndex);
     }
 
-    public void setGlobalZIndex(int zIndex) {
-        feature.setGlobalZIndex(zIndex);
+    public void setGlobalZIndex(int globalZIndex) {
+        feature.setGlobalZIndex(globalZIndex);
     }
 
     public void setProgress(float progress) {

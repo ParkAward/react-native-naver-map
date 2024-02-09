@@ -109,7 +109,7 @@ public class RNNaverMapPathOverlayManager extends EventEmittableViewGroupManager
     }
 
     @ReactProp(name = "globalZIndex", defaultInt = 0)
-    public void setGlobalZIndex(RNNaverMapPathOverlay view, int zIndex) {
-        view.setGlobalZIndex(zIndex);
+    public void setGlobalZIndex(RNNaverMapPathOverlay view, int globalZIndex) {
+        view.setGlobalZIndex(globalZIndex);
     }
 }
