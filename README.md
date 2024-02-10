@@ -1,12 +1,14 @@
-추가 패치
+#### 추가 패치
 
 ---
 
 ```
+네이버 지도 null로 인한 팅김현상 완화 <<< goodoc, wayne-kim 참고
+
 OverlayZLevel Enum Obejct 추가됨
 
 전체 Overlay 에 추가됨
-- globalZIndex: 맵의 z축
+- globalZIndex: 네이버 지도의 z축
 - zIndex: 같은 Overlay의 z축
 
 Polyline
@@ -14,7 +16,7 @@ Polyline
 - joinType 추가됨
 ```
 
-
+- Marker의 children 컴포넌트 렌더링 수정이 필요함
 
 
 
@@ -22,18 +24,22 @@ Polyline
 
 
 
-react-native-naver-map [![npm version](https://badge.fury.io/js/react-native-nmap.svg)](https://badge.fury.io/js/react-native-nmap)
+react-native-naver-map [![npm version](https://badge.fury.io/js/@parkaward%2Freact-native-nmap.svg)](https://badge.fury.io/js/@parkaward%2Freact-native-nmap)
 -----
 
 네이버맵의 리액트 네이티브 브릿지입니다.
 
-![](https://raw.githubusercontent.com/QuadFlask/react-native-naver-map/master/example/screenshot/screenshot.png)
+![](./example/screenshot/screenshot1.png)
 
 
 ## 설치
 
 ```
-npm install react-native-nmap --save;
+npm install @parkawrad/react-native-nmap --save;
+```
+
+```
+yarn add @parkaward/react-native-nmap
 ```
 
 - **React Native 0.60+**
@@ -244,6 +250,7 @@ interface MarkerProps {
     angle?: number
     hidden?: boolean
     zIndex?: number
+  	globalZIndex?: number
     iconPerspectiveEnabled?: boolean
     isHideCollidedSymbols?: boolean
     isHideCollidedMarkers?: boolean
@@ -297,6 +304,7 @@ interface PolylineProps {
   	capType?: "butt" | "round" | "square";
   	joinType?: 'meter' | 'round' | 'bevel'
     strokeColor?: string
+  	zIndex?: number
     globalZIndex?: number
     onClick?: () => void
 }
@@ -314,6 +322,7 @@ interface PathProps {
     passedOutlineColor?: string
     pattern?: ImageSourcePropType
     patternInterval?: number
+  	zIndex?: number
   	globalZIndex?: number
     onClick?: () => void
 }
@@ -323,11 +332,12 @@ interface PathProps {
 ```ts
 export interface CircleProps {
     coordinate: Coord[]
-    radius?: number;
-    color?: string;
-    outlineWidth?: number;
-    outlineColor?: string;
-    zIndex?: number;
+    radius?: number
+    color?: string
+    outlineWidth?: number
+    outlineColor?: string
+    zIndex?: number
+  	globalZIndex?: number
     onClick?: () => void
 }
 ```
@@ -370,7 +380,7 @@ export declare enum LayerGroup {
 }
 ```
 
-## 
+
 
 ## 참고
 
