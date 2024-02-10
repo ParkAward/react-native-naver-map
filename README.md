@@ -250,7 +250,7 @@ interface MarkerProps {
     angle?: number
     hidden?: boolean
     zIndex?: number
-  	globalZIndex?: number
+    globalZIndex?: number
     iconPerspectiveEnabled?: boolean
     isHideCollidedSymbols?: boolean
     isHideCollidedMarkers?: boolean
@@ -301,10 +301,10 @@ interface MarkerProps {
 interface PolylineProps {
     coordinates: Coord[]
     strokeWidth?: number
-  	capType?: "butt" | "round" | "square";
-  	joinType?: 'meter' | 'round' | 'bevel'
+    capType?: "butt" | "round" | "square";
+    joinType?: 'meter' | 'round' | 'bevel'
     strokeColor?: string
-  	zIndex?: number
+    zIndex?: number
     globalZIndex?: number
     onClick?: () => void
 }
@@ -322,8 +322,8 @@ interface PathProps {
     passedOutlineColor?: string
     pattern?: ImageSourcePropType
     patternInterval?: number
-  	zIndex?: number
-  	globalZIndex?: number
+    zIndex?: number
+    globalZIndex?: number
     onClick?: () => void
 }
 ```
@@ -337,7 +337,7 @@ export interface CircleProps {
     outlineWidth?: number
     outlineColor?: string
     zIndex?: number
-  	globalZIndex?: number
+    globalZIndex?: number
     onClick?: () => void
 }
 ```
@@ -370,7 +370,7 @@ export declare enum LayerGroup {
 
 ```ts
 export declare enum LayerGroup {
-		InfoWindow = 400000,
+        InfoWindow = 400000,
   	LocationOverlay = 300000,
   	Marker = 200000,
   	ArrowRouteOverlay = 100000,
