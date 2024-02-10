@@ -10,16 +10,18 @@
 #import <React/RCTBridge.h>
 #import <React/RCTImageLoader.h>
 #import <React/RCTUtils.h>
+#import <React/UIView+React.h>
 #import <NMapsMap/NMFNaverMapView.h>
 #import <NMapsMap/NMFMarker.h>
 #import <NMapsMap/NMFOverlayImage.h>
-
 #import "RCTConvert+NMFMapView.h"
+
 
 @implementation RNNaverMapMarker {
   RCTImageLoaderCancellationBlock _reloadImageCancellationBlock;
   __weak UIImageView *_iconImageView;
   UIView *_iconView;
+  UIView *_customView;
 }
 
   static NSMutableDictionary *_overlayImageHolder;
@@ -43,6 +45,34 @@
     };
   }
   return self;
+}
+
+
+- (void) insertReactSubview:(UIView *)subview atIndex:(NSInteger)atIndex {
+    self -> _customView = subview;
+    _realMarker.alpha = 0;
+  
+    if(subview != nil){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIGraphicsBeginImageContextWithOptions(self->_customView.bounds.size, NO, 0.0);
+            [self->_customView drawViewHierarchyInRect:self->_customView.bounds afterScreenUpdates:YES];
+            UIImage * snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            
+            NMFOverlayImage *overlayImage2 = [NMFOverlayImage overlayImageWithImage: snapshotImage];
+
+
+            self->_realMarker.iconImage = overlayImage2;
+            self->_realMarker.alpha = 1;
+
+        });
+        
+    }
+}
+
+- (void):(UIView *)subview{
+  self -> _customView = nil;
+  [super removeReactSubview:subview];
 }
 
 - (void)setZIndex:(NSInteger) zIndex {
@@ -197,6 +227,7 @@
   }
 
   NMFOverlayImage *overlayImage = [_overlayImageHolder valueForKey:image];
+  NSLog(@"1>>>>>>>>>>>>>>>>> %@", overlayImage);
   if (overlayImage != nil) {
     if (self->_iconImageView) [self->_iconImageView removeFromSuperview];
     self->_realMarker.iconImage = overlayImage;
@@ -217,6 +248,7 @@
                                                                  }
                                                                  dispatch_async(dispatch_get_main_queue(), ^{
                                                                    if (self->_iconImageView) [self->_iconImageView removeFromSuperview];
+                                                            
                                                                    NMFOverlayImage *overlayImage = [NMFOverlayImage overlayImageWithImage: image];
                                                                    self->_realMarker.iconImage = overlayImage;
 

@@ -28,6 +28,8 @@
 @implementation RNNaverMapView
 {
   NSMutableArray<UIView *> *_reactSubviews;
+  BOOL _isInitialized;
+  long long lastTouch;
 }
 
 - (nonnull instancetype)initWithFrame:(CGRect)frame
@@ -116,6 +118,11 @@
       @"contentRegion" : pointsToJson(mapView.contentRegion.exteriorRing.points),
       @"coveringRegion": pointsToJson(mapView.coveringRegion.exteriorRing.points),
     });
+  
+  if (((RNNaverMapView*)self).onInitialized != nil && !_isInitialized) {
+        _isInitialized = YES;
+        ((RNNaverMapView*)self).onInitialized(@{});
+    }
 }
 
 static NSArray* pointsToJson(NSArray<NMGLatLng*> *points) {
@@ -143,11 +150,15 @@ static NSDictionary* toJson(NMGLatLng * _Nonnull latlng) {
 }
 
 - (void)mapView:(nonnull NMFMapView *)mapView regionWillChangeAnimated:(BOOL)animated byReason:(NSInteger)reason {
-  if (((RNNaverMapView*)self).onTouch != nil)
-    ((RNNaverMapView*)self).onTouch(@{
-      @"animated": @(animated),
-      @"reason": @(reason)
-    });
+  if (((RNNaverMapView*)self).onTouch != nil){
+      if(reason == -1 && [[NSDate date] timeIntervalSince1970] - lastTouch > 0.5 ){
+          ((RNNaverMapView*)self).onTouch(@{
+              @"animated": @(animated),
+              @"reason": @(reason)
+          });
+          lastTouch = [[NSDate date] timeIntervalSince1970];
+      }
+  }
 }
 
 

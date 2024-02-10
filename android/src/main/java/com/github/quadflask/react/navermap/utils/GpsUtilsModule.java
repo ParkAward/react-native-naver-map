@@ -30,13 +30,18 @@ public class GpsUtilsModule extends ReactContextBaseJavaModule {
     public static final String NAME = "GpsUtilsModule";
     private static final int REQUEST_CHECK_SETTINGS = 0x1;
 
+    private ReactApplicationContext applicationContext;
     public GpsUtilsModule(ReactApplicationContext reactContext) {
         super(reactContext);
+        applicationContext = reactContext;
     }
 
 
     @ReactMethod
     public boolean isDeviceGPSOn(Promise promise) {
+        if(applicationContext == null){
+            return false;
+        }
         final Activity activity = getCurrentActivity();
         LocationManager manager = (LocationManager) activity.getSystemService(Context.LOCATION_SERVICE);
 
