@@ -149,8 +149,20 @@ public class RNNaverMapMarker extends ClickableRNNaverMapFeature<Marker> impleme
         feature.setHeight(height);
     }
 
+    public void setHideCollidedSymbols(boolean isHidden) {
+        feature.setHideCollidedSymbols(isHidden);
+    }
+
     public void setHideCollidedMarkers(boolean isHidden) {
         feature.setHideCollidedMarkers(isHidden);
+    }
+
+    public void setHideCollidedCaptions(boolean isHidden) {
+        feature.setHideCollidedCaptions(isHidden);
+    }
+
+    public void setIconPerspectiveEnabled(boolean enabled) {
+        feature.setIconPerspectiveEnabled(enabled);
     }
 
     public void setCaption(String text, int textSize, int color, int haloColor, int offset, Align... aligns) {

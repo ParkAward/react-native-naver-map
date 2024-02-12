@@ -54,10 +54,14 @@ const TextScreen = () => {
   return <Text>text</Text>;
 };
 
+const image1 = require('./marker.png');
 const MapViewScreen = ({navigation}) => {
+  const [resolvedImage, setResolvedImage] = useState(null);
   const mapView = useRef(null);
 
   useEffect(() => {
+    const resolve = Image.resolveAssetSource(image1);
+    setResolvedImage(resolve);
     requestLocationPermission();
   }, []);
 
@@ -69,27 +73,50 @@ const MapViewScreen = ({navigation}) => {
         ref={mapView}
         style={{width: '100%', height: '100%'}}
         showsMyLocationButton={true}
-        center={{...P0, zoom: 16}}
+        center={{...P0, zoom: 4}}
         onTouch={e => console.warn('onTouch', JSON.stringify(e.nativeEvent))}
         onCameraChange={e => console.warn('onCameraChange', JSON.stringify(e))}
         onMapClick={e => console.warn('onMapClick', JSON.stringify(e))}
         useTextureView>
-        <Polyline
-          coordinates={[P0, P2]}
+        {/* <Polyline
+          coordinates={[P0, P2, P1]}
           onClick={() => console.warn('onClick! path')}
           strokeWidth={50}
-          capType={'butt'}
-          globalZIndex={1000}
+          capType={'round'}
+          joinType={'bevel'}
+          globalZIndex={1002}
           strokeColor="rgba(255,0,0,0.5)"
         />
-        <Marker coordinate={P0} globalZIndex={-1} flat rotation={170} />
+        <Marker coordinate={P0} globalZIndex={9999} flat rotation={170} /> */}
+        <Marker
+          coordinate={{...P0, longitude: P0.longitude + 0.001}}
+          rotation={30}
+          caption={{
+            text: 'helloWorld',
+          }}
+          subCaption={{
+            text: 'subCaption',
+          }}
+        />
+        {/* <Marker
+          coordinate={{...P0, longitude: P0.longitude + 0.002}}
+          globalZIndex={9999}
+          rotation={30}
+          subCaption={{
+            text: '현재 위치',
+            textSize: 30,
+            haloColor: 'dddd',
+            maxZoom: 1,
+          }}
+        /> */}
+        {/* <Marker coordinate={P0} globalZIndex={9999} flat rotation={270} />
         <Path
           coordinates={[P0, P2]}
           onClick={() => console.warn('onClick! path')}
           width={10}
           globalZIndex={1001}
           zIndex={123123123210}
-        />
+        /> */}
         {/* <Marker
           coordinate={P0}
           onClick={() => {
@@ -161,7 +188,7 @@ const MapViewScreen = ({navigation}) => {
                 flexDirection: 'row',
               }}>
               <Image
-                source={require('./marker.png')}
+                source={resolvedImage}
                 style={{
                   width: 32,
                   height: 32,
@@ -175,7 +202,7 @@ const MapViewScreen = ({navigation}) => {
               <Text>Image</Text>
             </View>
             <ImageBackground
-              source={require('./marker.png')}
+              source={resolvedImage}
               style={{width: 64, height: 64}}>
               <Text>image background</Text>
             </ImageBackground>

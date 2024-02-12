@@ -132,10 +132,27 @@ public class RNNaverMapMarkerManager extends EventEmittableViewGroupManager<RNNa
         view.setGlobalZIndex(globalZIndex);
     }
 
+    @ReactProp(name = "iconPerspectiveEnabled", defaultBoolean = false)
+    public void setIconPerspectiveEnabled(RNNaverMapMarker view, boolean enabled) {
+        view.setIconPerspectiveEnabled(enabled);
+    }
+
+    @ReactProp(name = "isHideCollidedSymbols", defaultBoolean = false)
+    public void setHideCollidedSymbols(RNNaverMapMarker view, boolean collided) {
+        view.setHideCollidedSymbols(collided);
+    }
+
+    @ReactProp(name = "isHideCollidedCaptions", defaultBoolean = false)
+    public void setHideCollidedCaptions(RNNaverMapMarker view, boolean collided) {
+        view.setHideCollidedCaptions(collided);
+    }
+
     @ReactProp(name = "isHideCollidedMarkers", defaultBoolean = false)
     public void setHideCollidedMarkers(RNNaverMapMarker view, boolean collided) {
         view.setHideCollidedMarkers(collided);
     }
+
+
 
     @ReactProp(name = "caption")
     public void setCaption(RNNaverMapMarker view, ReadableMap map) {
