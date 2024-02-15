@@ -367,7 +367,7 @@ interface PolylineProps extends Omit<MapOverlay, "coordinate"> {
   capType?: "butt" | "round" | "square";
   joinType?: "bevel" | "miter" | "round";
   zIndex?: number;
-  glboalZIndex?: number;
+  globalZIndex?: number;
 }
 
 export class Polyline extends Component<PolylineProps> {
