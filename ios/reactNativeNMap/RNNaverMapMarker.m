@@ -15,6 +15,7 @@
 #import <NMapsMap/NMFMarker.h>
 #import <NMapsMap/NMFOverlayImage.h>
 #import "RCTConvert+NMFMapView.h"
+#import <NMapsGeometry/NMGLatLng.h>
 
 
 @implementation RNNaverMapMarker {

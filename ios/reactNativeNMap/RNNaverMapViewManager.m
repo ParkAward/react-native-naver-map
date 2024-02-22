@@ -8,6 +8,7 @@
 #import <React/RCTViewManager.h>
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTUIManager.h>
+#import <NMapsGeometry/NMGLatLng.h>
 
 #import <NMapsMap/NMFNaverMapView.h>
 #import <NMapsMap/NMFCameraUpdate.h>

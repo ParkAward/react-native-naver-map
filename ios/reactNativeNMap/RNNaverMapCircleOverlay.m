@@ -11,6 +11,7 @@
 #import <React/RCTUtils.h>
 #import <NMapsMap/NMFNaverMapView.h>
 #import <NMapsMap/NMFCircleOverlay.h>
+#import <NMapsGeometry/NMGLatLng.h>
 
 #import "RCTConvert+NMFMapView.h"
 

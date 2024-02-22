@@ -8,6 +8,7 @@
 #import "RNNaverMapCircleOverlayManager.h"
 #import "RNNaverMapCircleOverlay.h"
 #import <React/RCTUIManager.h>
+#import <NMapsGeometry/NMGLatLng.h>
 
 #import "RCTConvert+NMFMapView.h"
 
