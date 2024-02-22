@@ -9,6 +9,8 @@
 #import "RNNaverMapMarker.h"
 #import <React/RCTUIManager.h>
 #import <NMapsMap/NMFCameraCommon.h>
+#import <NMapsMap/NMGLatLng.h>
+
 
 #import "RCTConvert+NMFMapView.h"
 

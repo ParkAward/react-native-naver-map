@@ -8,6 +8,7 @@
 #import <NMapsMap/NMFCameraUpdate.h>
 #import <NMapsMap/NMFCameraPosition.h>
 #import <NMapsMap/NMFOverlay.h>
+#import <NMapsMap/NMGLatLng.h>
 
 #import "RCTConvert+NMFMapView.h"
 

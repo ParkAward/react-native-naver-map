@@ -13,6 +13,7 @@
 #import <React/RCTUtils.h>
 #import <NMapsMap/NMFNaverMapView.h>
 #import <NMapsMap/NMFPolygonOverlay.h>
+#import <NMapsMap/NMGLatLng.h>
 
 #import "RCTConvert+NMFMapView.h"
 

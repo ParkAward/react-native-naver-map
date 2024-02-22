@@ -12,6 +12,8 @@
 #import <NMapsMap/NMFNaverMapView.h>
 #import <NMapsMap/NMFPath.h>
 #import <NMapsMap/NMFOverlayImage.h>
+#import <NMapsMap/NMGLatLng.h>
+
 
 #import "RCTConvert+NMFMapView.h"
 
