@@ -11,6 +11,9 @@ OverlayZLevel Enum Obejct 추가됨
 - globalZIndex: 네이버 지도의 z축
 - zIndex: 같은 Overlay의 z축
 
+Marker
+- ios Flat 기능 수정
+
 Polyline
 - capType 추가됨
 - joinType 추가됨
