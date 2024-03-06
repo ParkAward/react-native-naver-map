@@ -120,8 +120,8 @@
     _realMarker.angle = angle;
 }
 
-- (void)setFlatEnabled:(BOOL) flatEnabled {
-    _realMarker.flat = flatEnabled;
+- (void)setFlat:(BOOL) flat {
+    _realMarker.flat = flat;
 }
 
 - (void)setIconPerspectiveEnabled:(BOOL) iconPerspectiveEnabled {

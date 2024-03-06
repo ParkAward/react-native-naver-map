@@ -22,7 +22,7 @@
 @property (nonatomic, assign) NSInteger globalZIndex;
 @property (nonatomic, assign) BOOL hidden;
 @property (nonatomic, assign) CGFloat angle;
-@property (nonatomic, assign) BOOL flatEnabled;
+@property (nonatomic, assign) BOOL flat;
 @property (nonatomic, assign) BOOL iconPerspectiveEnabled;
 @property (nonatomic, assign) BOOL isHideCollidedSymbols;
 @property (nonatomic, assign) BOOL isHideCollidedMarkers;
